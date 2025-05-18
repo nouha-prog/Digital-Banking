@@ -76,6 +76,14 @@ public class BankAccountServiceImpl implements BankAccountService {
         List<CustomerDTO> customerDTOS = customers.stream()
                 .map(customer -> dtoMapper.fromCustomer(customer))
                 .collect(Collectors.toList());
+        /*
+        List<CustomerDTO> customerDTOS=new ArrayList<>();
+        for (Customer customer:customers){
+            CustomerDTO customerDTO=dtoMapper.fromCustomer(customer);
+            customerDTOS.add(customerDTO);
+        }
+        *
+         */
         return customerDTOS;
     }
 

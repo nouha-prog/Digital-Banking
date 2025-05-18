@@ -1,5 +1,9 @@
 package ma.enset.ebankingbackend;
 
+import ma.enset.ebankingbackend.dto.BankAccountDTO;
+import ma.enset.ebankingbackend.dto.CurrentBankAccountDTO;
+import ma.enset.ebankingbackend.dto.CustomerDTO;
+import ma.enset.ebankingbackend.dto.SavingBankAccountDTO;
 import ma.enset.ebankingbackend.entities.*;
 import ma.enset.ebankingbackend.enums.AccountStatus;
 import ma.enset.ebankingbackend.enums.OperationType;
@@ -19,21 +23,16 @@ import java.util.UUID;
 import java.util.stream.Stream;
 
 @SpringBootApplication
-public class EBankingBackendApplication {
+public class EbankingApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(EBankingBackendApplication.class, args);
+        SpringApplication.run(EbankingApplication.class, args);
     }
-
-
-
-
-
     @Bean
     CommandLineRunner commandLineRunner(BankAccountService bankAccountService){
         return args -> {
             Stream.of("Hassan","Imane","Mohamed").forEach(name->{
-                Customer customer=new Customer();
+                CustomerDTO customer=new CustomerDTO();
                 customer.setName(name);
                 customer.setEmail(name+"@gmail.com");
                 bankAccountService.saveCustomer(customer);
@@ -47,14 +46,14 @@ public class EBankingBackendApplication {
                     e.printStackTrace();
                 }
             });
-            List<BankAccount> bankAccounts = bankAccountService.bankAccountList();
-            for (BankAccount bankAccount:bankAccounts){
+            List<BankAccountDTO> bankAccounts = bankAccountService.bankAccountList();
+            for (BankAccountDTO bankAccount:bankAccounts){
                 for (int i = 0; i <10 ; i++) {
                     String accountId;
-                    if(bankAccount instanceof SavingBankAccount){
-                        accountId=((SavingBankAccount) bankAccount).getId();
+                    if(bankAccount instanceof SavingBankAccountDTO){
+                        accountId=((SavingBankAccountDTO) bankAccount).getId();
                     } else{
-                        accountId=((CurrentBankAccount) bankAccount).getId();
+                        accountId=((CurrentBankAccountDTO) bankAccount).getId();
                     }
                     bankAccountService.credit(accountId,10000+Math.random()*120000,"Credit");
                     bankAccountService.debit(accountId,1000+Math.random()*9000,"Debit");
@@ -62,16 +61,15 @@ public class EBankingBackendApplication {
             }
         };
     }
-
-    @Bean
+    //@Bean
     CommandLineRunner start(CustomerRepository customerRepository,
                             BankAccountRepository bankAccountRepository,
-                            AccountOperationRepository accountOperationRepository) {
+                            AccountOperationRepository accountOperationRepository){
         return args -> {
-            Stream.of("Hassan", "Yassine", "Aicha").forEach(name -> {
-                Customer customer = new Customer();
+            Stream.of("Hassan","Yassine","Aicha").forEach(name->{
+                Customer customer=new Customer();
                 customer.setName(name);
-                customer.setEmail(name + "@gmail.com");
+                customer.setEmail(name+"@gmail.com");
                 customerRepository.save(customer);
             });
             customerRepository.findAll().forEach(cust->{
@@ -103,7 +101,10 @@ public class EBankingBackendApplication {
                     accountOperation.setBankAccount(acc);
                     accountOperationRepository.save(accountOperation);
                 }
+
             });
         };
+
     }
+
 }
