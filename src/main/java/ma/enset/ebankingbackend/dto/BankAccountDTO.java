@@ -1,5 +1,4 @@
 package ma.enset.ebankingbackend.dto;
-
 import lombok.Data;
 
 @Data

@@ -2,6 +2,9 @@ package ma.enset.ebankingbackend.services;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import ma.enset.ebankingbackend.dto.AccountHistoryDTO;
+import ma.enset.ebankingbackend.dto.AccountOperationDTO;
+import ma.enset.ebankingbackend.dto.CurrentBankAccountDTO;
 import ma.enset.ebankingbackend.dto.CustomerDTO;
 import ma.enset.ebankingbackend.entities.*;
 import ma.enset.ebankingbackend.enums.OperationType;
