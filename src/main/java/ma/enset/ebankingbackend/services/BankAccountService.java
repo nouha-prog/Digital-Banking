@@ -19,4 +19,6 @@ public interface BankAccountService {
     void credit(String accountId, double amount, String description);
 
     void transfer(String accountIdSource, String accountIdDestination, double amount);
+
+    List<BankAccount> bankAccountList();
 }
