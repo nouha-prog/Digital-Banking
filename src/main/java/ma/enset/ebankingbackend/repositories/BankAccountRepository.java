@@ -7,7 +7,6 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
+
 public interface BankAccountRepository extends JpaRepository<BankAccount,String> {
-    @Query("select c from Customer c where c.name like :kw")
-    List<Customer> searchCustomer(@Param("kw") String keyword);
 }
