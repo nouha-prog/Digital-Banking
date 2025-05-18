@@ -23,10 +23,10 @@ import java.util.UUID;
 import java.util.stream.Stream;
 
 @SpringBootApplication
-public class EbankingApplication {
+public class EBankingBackendApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(EbankingApplication.class, args);
+        SpringApplication.run(EBankingBackendApplication.class, args);
     }
     @Bean
     CommandLineRunner commandLineRunner(BankAccountService bankAccountService){
