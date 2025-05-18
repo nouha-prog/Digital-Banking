@@ -6,7 +6,7 @@
         <div *ngIf="searchFormGroup">
           <form [formGroup]="searchFormGroup" (ngSubmit)="handleSearchCustomers()">
             <div class="input-group">
-              <label class="input-group-text"><b>Keyword :</b></label>
+              <label class="input-group-text">Keyword :</label>
               <input type="text" formControlName="keyword" class="form-control">
               <button class="btn btn-info">
                 <i class="bi bi-search"></i>
@@ -14,29 +14,23 @@
             </div>
           </form>
         </div>
-        &nbsp;
-        &nbsp;
-        <table class="table" style="border: black">
+        <table class="table">
           <thead>
           <tr>
-            <th class="text-center">#</th>
-            <th class="text-center">Name</th>
-            <th class="text-center">Email</th>
-            <th class="text-center">Action</th>
-            <th class="text-center">Account Details</th>
+            <th>ID</th><th>Name</th><th>Email</th>
           </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let c of customers | async; let i = index">
-            <td class="text-center">{{i + 1}}</td>
-            <td class="text-center">{{c.name}}</td>
-            <td class="text-center">{{c.email}}</td>
-            <td class="text-center">
+          <tr *ngFor="let c of customers | async">
+            <td>{{c.id}}</td>
+            <td>{{c.name}}</td>
+            <td>{{c.email}}</td>
+            <td>
               <button (click)="handleDeleteCustomer(c)" class="btn btn-danger">
                 <i class="bi bi-trash"></i>
               </button>
             </td>
-            <td class="text-center">
+            <td>
               <button (click)="handleCustomerAccounts(c)" class="btn btn-success">
                 Accounts
               </button>

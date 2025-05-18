@@ -1,92 +1,94 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup } from "@angular/forms";
+import { AccountsService } from "../services/accounts.service";
+import { catchError, Observable, throwError } from "rxjs";
+import { AccountDetails } from "../model/account.model";
 import { CommonModule } from '@angular/common';
-import { catchError, Observable, throwError } from 'rxjs';
-
-// @ts-ignore
-import { AccountsService } from '../services/accounts.service';
-// @ts-ignore
-import { AccountDetails } from '../model/account.model';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-accounts',
   standalone: true,
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './accounts.component.html',
-  styleUrls: ['./accounts.component.css'],
-  imports: [CommonModule, ReactiveFormsModule]
+  styleUrls: ['./accounts.component.css']
 })
 export class AccountsComponent implements OnInit {
   accountFormGroup!: FormGroup;
-  operationFormGroup!: FormGroup;
-
   currentPage: number = 0;
   pageSize: number = 5;
   accountObservable!: Observable<AccountDetails>;
-  errorMessage: string = '';
+  operationFromGroup!: FormGroup;
+  errorMessage!: string;
 
-  constructor(private fb: FormBuilder, private accountService: AccountsService) {}
+  constructor(private fb: FormBuilder, private accountService: AccountsService) { }
 
   ngOnInit(): void {
     this.accountFormGroup = this.fb.group({
-      accountId: this.fb.control('', [Validators.required])
+      accountId: this.fb.control('')
     });
-
-    this.operationFormGroup = this.fb.group({
-      operationType: this.fb.control(null, [Validators.required]),
-      amount: this.fb.control(0, [Validators.required, Validators.min(1)]),
-      description: this.fb.control(null, [Validators.required]),
+    this.operationFromGroup = this.fb.group({
+      operationType: this.fb.control(null),
+      amount: this.fb.control(0),
+      description: this.fb.control(null),
       accountDestination: this.fb.control(null)
     });
   }
 
-  handleSearchAccount(): void {
-    const accountId: string = this.accountFormGroup.value.accountId;
-
+  handleSearchAccount() {
+    let accountId: string = this.accountFormGroup.value.accountId;
     this.accountObservable = this.accountService.getAccount(accountId, this.currentPage, this.pageSize).pipe(
       catchError(err => {
-        this.errorMessage = err.message || 'An error occurred';
-        return throwError(() => err);
+        this.errorMessage = err.message;
+        return throwError(err);
       })
     );
   }
 
-  gotoPage(page: number): void {
+  gotoPage(page: number) {
     this.currentPage = page;
     this.handleSearchAccount();
   }
 
-  handleAccountOperation(): void {
-    const accountId: string = this.accountFormGroup.value.accountId;
-    const { operationType, amount, description, accountDestination } = this.operationFormGroup.value;
-
-    if (operationType === 'DEBIT') {
+  handleAccountOperation() {
+    let accountId: string = this.accountFormGroup.value.accountId;
+    let operationType = this.operationFromGroup.value.operationType;
+    let amount: number = this.operationFromGroup.value.amount;
+    let description: string = this.operationFromGroup.value.description;
+    let accountDestination: string = this.operationFromGroup.value.accountDestination;
+    if (operationType == 'DEBIT') {
       this.accountService.debit(accountId, amount, description).subscribe({
-        next: () => {
-          alert('Debit successful!');
-          this.operationFormGroup.reset();
+        next: (data) => {
+          alert("Success Credit");
+          this.operationFromGroup.reset();
           this.handleSearchAccount();
         },
-        error: (err: any) => console.error(err)
+        error: (err) => {
+          console.log(err);
+        }
       });
-
-    } else if (operationType === 'CREDIT') {
+    } else if (operationType == 'CREDIT') {
       this.accountService.credit(accountId, amount, description).subscribe({
-        next: () => {
-          alert('Credit successful!');
-          this.operationFormGroup.reset();
+        next: (data) => {
+          alert("Success Debit");
+          this.operationFromGroup.reset();
           this.handleSearchAccount();
         },
-        error: (err: any) => console.error(err)
+        error: (err) => {
+          console.log(err);
+        }
       });
-
-    } else if (operationType === 'TRANSFER') {
+    }
+    else if (operationType == 'TRANSFER') {
       this.accountService.transfer(accountId, accountDestination, amount, description).subscribe({
-        next: () => {
-          alert('Transfer successful!');
-          this.operationFormGroup.reset();
+        next: (data) => {
+          alert("Success Transfer");
+          this.operationFromGroup.reset();
           this.handleSearchAccount();
         },
-        error: (err: any) => console.error(err)
+        error: (err) => {
+          console.log(err);
+        }
       });
     }
   }

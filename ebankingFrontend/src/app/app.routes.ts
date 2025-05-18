@@ -1,32 +1,13 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { Routes } from '@angular/router';
 import { CustomersComponent } from './customers/customers.component';
 import { AccountsComponent } from './accounts/accounts.component';
-import {HttpClientModule} from "@angular/common/http";
-import {ReactiveFormsModule} from "@angular/forms";
 import { NewCustomerComponent } from './new-customer/new-customer.component';
 import { CustomerAccountsComponent } from './customer-accounts/customer-accounts.component';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    CustomersComponent,
-    AccountsComponent,
-    NewCustomerComponent,
-    CustomerAccountsComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    NavbarComponent
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
+export const routes: Routes = [
+  { path: 'customers', component: CustomersComponent },
+  { path: 'accounts', component: AccountsComponent },
+  { path: 'new-customer', component: NewCustomerComponent },
+  { path: 'customer-accounts/:id', component: CustomerAccountsComponent },
+  { path: '', redirectTo: '/customers', pathMatch: 'full' } // Redirection par défaut
+];
