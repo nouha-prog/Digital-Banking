@@ -1,4 +1,10 @@
 package ma.enset.ebankingbackend.dto;
 
-public class CustomerDto {
+import lombok.Data;
+
+@Data
+public class CustomerDTO {
+    private Long id;
+    private String name;
+    private String email;
 }
