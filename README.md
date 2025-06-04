@@ -72,7 +72,7 @@ http://localhost:4200/
 
 5.1 Consulter les utilisateurs :
 ![image](https://github.com/user-attachments/assets/6dc18ff8-c328-4bda-804a-80d69bee8f78)
-![image](https://github.com/user-attachments/assets/f2a735a8-c7c4-47c7-9a9d-30ac2d94c187)
+
 ![image](https://github.com/user-attachments/assets/da69c1b7-0961-4cc3-890d-e98ef2d86b8b)
 
 user:
@@ -105,6 +105,7 @@ user:
 
 Consulter les transactions et faire une operation :
 ![image](https://github.com/user-attachments/assets/c2814270-7bc1-4279-8853-cba6b474c02e)
+![image](https://github.com/user-attachments/assets/e12f530e-af29-45a8-b9d3-c3a409a8641b)
 
 
 
