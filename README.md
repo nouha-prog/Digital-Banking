@@ -63,27 +63,49 @@ Ouvrir le navigateur et accéder à l’adresse :
 
 http://localhost:4200/
 5. Résultat
+5.1 Authentification (admin,user)
+![image](https://github.com/user-attachments/assets/04fe74b5-7aad-4238-adec-df373a20189d)
+
+5.2 Homepage dynamique et moderne
+![image](https://github.com/user-attachments/assets/33580aa1-7d3c-484a-89db-60d4ee517ff1)
+
 
 5.1 Consulter les utilisateurs :
-![image](https://github.com/user-attachments/assets/7db55b15-08a3-419d-bd6e-9076da901b87)
+![image](https://github.com/user-attachments/assets/6dc18ff8-c328-4bda-804a-80d69bee8f78)
+![image](https://github.com/user-attachments/assets/f2a735a8-c7c4-47c7-9a9d-30ac2d94c187)
+![image](https://github.com/user-attachments/assets/da69c1b7-0961-4cc3-890d-e98ef2d86b8b)
+
+user:
+![image](https://github.com/user-attachments/assets/85e2ee92-3720-478d-a6fc-f4b43e322334)
+
+
 
 
 5.2 Consulter les comptes par ID :
-![image](https://github.com/user-attachments/assets/5739f2e4-909b-4773-b7fe-9db9e44591e7)
+![image](https://github.com/user-attachments/assets/2f600d4c-daf7-4703-8cfc-ec7a72bbf5de)
+![image](https://github.com/user-attachments/assets/6f8ef0fe-e009-494e-a024-b07d48c8c5b0)
+![image](https://github.com/user-attachments/assets/e12f530e-af29-45a8-b9d3-c3a409a8641b)
+
+user: 
+![image](https://github.com/user-attachments/assets/9d38d512-d218-4da4-acd3-f79434e6e222)
+
+
 
 5.3 Ajouter un utilisateur :
-![image](https://github.com/user-attachments/assets/bf556f0d-4c1f-4666-87f8-96562bbbde20)
-![image](https://github.com/user-attachments/assets/8fc67e8b-35ca-46d0-a74a-2ef5b790ef77)
-![image](https://github.com/user-attachments/assets/cec66511-7cb9-4e40-9c1a-1bcb096375fe)
-![image](https://github.com/user-attachments/assets/3cf329b0-5cb3-453c-b1d8-b4b23b0ea3ef)
+![image](https://github.com/user-attachments/assets/36146db3-8554-4c9f-bfa1-9e3e0542744e)
+![image](https://github.com/user-attachments/assets/20210c50-fcd2-401f-8368-779abedc6046)
+![image](https://github.com/user-attachments/assets/813912c3-d354-4753-a6dd-36fd5a8b64e7)
+
+![image](https://github.com/user-attachments/assets/46273aaf-0f2b-470b-866a-642b3d6046b4)
+
 
 
 
 5.4 Consulter les transactions et faire une opération :
 
 Consulter les transactions et faire une operation :
-![image](https://github.com/user-attachments/assets/87d02971-5360-4862-ad50-714f176e6e60)
-![image](https://github.com/user-attachments/assets/41951e78-1bef-4b69-93f9-c45cebd72811)
+![image](https://github.com/user-attachments/assets/c2814270-7bc1-4279-8853-cba6b474c02e)
+
 
 
 
