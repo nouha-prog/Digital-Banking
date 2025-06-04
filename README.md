@@ -80,15 +80,13 @@ user:
 
 
 
-
 5.4 Consulter les comptes par ID :
 ![image](https://github.com/user-attachments/assets/2f600d4c-daf7-4703-8cfc-ec7a72bbf5de)
 ![image](https://github.com/user-attachments/assets/6f8ef0fe-e009-494e-a024-b07d48c8c5b0)
-![image](https://github.com/user-attachments/assets/e12f530e-af29-45a8-b9d3-c3a409a8641b)
+
 
 user: 
 ![image](https://github.com/user-attachments/assets/9d38d512-d218-4da4-acd3-f79434e6e222)
-
 
 
 5.5 Ajouter un utilisateur :
