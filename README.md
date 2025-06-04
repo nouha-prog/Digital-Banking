@@ -70,7 +70,7 @@ http://localhost:4200/
 ![image](https://github.com/user-attachments/assets/33580aa1-7d3c-484a-89db-60d4ee517ff1)
 
 
-5.1 Consulter les utilisateurs :
+5.3 Consulter les utilisateurs :
 ![image](https://github.com/user-attachments/assets/6dc18ff8-c328-4bda-804a-80d69bee8f78)
 
 ![image](https://github.com/user-attachments/assets/da69c1b7-0961-4cc3-890d-e98ef2d86b8b)
@@ -81,7 +81,7 @@ user:
 
 
 
-5.2 Consulter les comptes par ID :
+5.4 Consulter les comptes par ID :
 ![image](https://github.com/user-attachments/assets/2f600d4c-daf7-4703-8cfc-ec7a72bbf5de)
 ![image](https://github.com/user-attachments/assets/6f8ef0fe-e009-494e-a024-b07d48c8c5b0)
 ![image](https://github.com/user-attachments/assets/e12f530e-af29-45a8-b9d3-c3a409a8641b)
@@ -91,7 +91,7 @@ user:
 
 
 
-5.3 Ajouter un utilisateur :
+5.5 Ajouter un utilisateur :
 ![image](https://github.com/user-attachments/assets/36146db3-8554-4c9f-bfa1-9e3e0542744e)
 ![image](https://github.com/user-attachments/assets/20210c50-fcd2-401f-8368-779abedc6046)
 ![image](https://github.com/user-attachments/assets/813912c3-d354-4753-a6dd-36fd5a8b64e7)
@@ -101,7 +101,7 @@ user:
 
 
 
-5.4 Consulter les transactions et faire une opération :
+5.6 Consulter les transactions et faire une opération :
 
 Consulter les transactions et faire une operation :
 ![image](https://github.com/user-attachments/assets/c2814270-7bc1-4279-8853-cba6b474c02e)
