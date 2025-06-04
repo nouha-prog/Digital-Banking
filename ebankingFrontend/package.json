@@ -19,7 +19,10 @@
     "@angular/router": "^19.2.0",
     "bootstrap": "^5.3.6",
     "bootstrap-icons": "^1.13.1",
+<<<<<<< HEAD
     "jwt-decode": "^4.0.0",
+=======
+>>>>>>> 5a4163c096d1ffc6b51c0bdc56f9367f35f69df4
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"

@@ -1,9 +1,20 @@
 package ma.enset.ebankingbackend.repositories;
 import ma.enset.ebankingbackend.entities.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
+<<<<<<< HEAD
 
 import java.util.List;
 
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
     List<Customer> findByNameContains(String keyword);
+=======
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import java.util.List;
+
+public interface CustomerRepository extends JpaRepository<Customer,Long> {
+    @Query("select c from Customer c where c.name like :kw")
+    List<Customer> searchCustomer(@Param("kw") String keyword);
+>>>>>>> 5a4163c096d1ffc6b51c0bdc56f9367f35f69df4
 }

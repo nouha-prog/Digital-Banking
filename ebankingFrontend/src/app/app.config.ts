@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
@@ -11,5 +12,16 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(
       withInterceptors([AppHttpInterceptor])
     )
+=======
+import { ApplicationConfig } from '@angular/core';
+import { provideRouter } from '@angular/router';
+import { provideHttpClient } from '@angular/common/http'; // Pour HttpClient
+import { routes } from './app.routes';
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideRouter(routes),
+    provideHttpClient()
+>>>>>>> 5a4163c096d1ffc6b51c0bdc56f9367f35f69df4
   ]
 };

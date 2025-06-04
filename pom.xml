@@ -47,6 +47,7 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+<<<<<<< HEAD
 
         <dependency>
             <groupId>org.springdoc</groupId>
@@ -61,6 +62,8 @@
 
 
 
+=======
+>>>>>>> 5a4163c096d1ffc6b51c0bdc56f9367f35f69df4
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
