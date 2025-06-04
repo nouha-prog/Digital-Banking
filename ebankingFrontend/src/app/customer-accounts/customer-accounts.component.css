@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+.customers-section {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e1bee7 20%);
+  animation: fadeIn 1s ease-in;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.8s ease-in;
+}
+
+.card-header {
+  background: linear-gradient(135deg, #6a1b9a 0%, #ab47bc 100%);
+  color: #ffffff;
+  border-radius: 15px 15px 0 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+.btn-outline-light {
+  border-color: #e1bee7;
+  color: #e1bee7;
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+  background-color: #e1bee7;
+  color: #4a148c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #6a1b9a 0%, #ab47bc 100%);
+  border: none;
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(106, 27, 154, 0.4);
+}
+
+.alert-warning {
+  background-color: #fff3cd;
+  color: #856404;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.alert-danger {
+  background-color: #ffebee;
+  color: #c0392b;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.table {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table thead {
+  background: #f5f5f5;
+  color: #2c3e50;
+}
+
+.table th, .table td {
+  padding: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.table tbody tr {
+  transition: background-color 0.3s ease;
+}
+
+.table tbody tr:hover {
+  background-color: #e1bee7;
+}
+
+.badge.bg-success {
+  background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%) !important;
+  border-radius: 12px;
+  padding: 0.5rem 0.8rem;
+  font-size: 0.85rem;
+  transition: transform 0.3s ease;
+}
+
+.badge.bg-success:hover {
+  transform: scale(1.05);
+}
+
+.badge.bg-warning {
+  background: linear-gradient(135deg, #ffb300 0%, #ffca28 100%) !important;
+  color: #2c3e50 !important;
+  border-radius: 12px;
+  padding: 0.5rem 0.8rem;
+  font-size: 0.85rem;
+  transition: transform 0.3s ease;
+}
+
+.badge.bg-warning:hover {
+  transform: scale(1.05);
+}
+
+strong {
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.spinner-border {
+  color: #6a1b9a;
+}
+
+.text-muted {
+  color: #7f8c8d !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .card-body {
+    padding: 1.5rem;
+  }
+  .card-header {
+    font-size: 1.1rem;
+  }
+  .btn-outline-light, .btn-primary {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+  .table th, .table td {
+    font-size: 0.85rem;
+  }
+}

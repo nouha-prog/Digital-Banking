@@ -1,0 +1,71 @@
+<div class="login-section min-vh-100 w-100 d-flex align-items-center justify-content-center text-center">
+  <div class="container-fluid px-4">
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-4">
+        <div class="card border-0 shadow-lg">
+          <div class="card-body p-4 p-md-5">
+            <i class="bi bi-key display-2 mb-3"></i>
+            <h1 class="h3 fw-bold mb-2">Connexion Sécurisée</h1>
+            <p class="mb-4">Accédez à votre espace bancaire numérique</p>
+            @if (errorMessage) {
+              <div class="alert alert-danger mb-4" role="alert">
+                {{ errorMessage }}
+              </div>
+            }
+            <form [formGroup]="formLogin" (ngSubmit)="handleLogin()">
+              <div class="mb-3">
+                <label for="username" class="form-label visually-hidden">Username</label>
+                <div class="input-group">
+                  <span class="input-group-text">
+                    <i class="bi bi-person"></i>
+                  </span>
+                  <input
+                    type="text"
+                    formControlName="username"
+                    id="username"
+                    class="form-control"
+                    placeholder="Entrez votre nom d'utilisateur"
+                    aria-label="Username"
+                    [ngClass]="{'is-invalid': formLogin.controls['username'].touched && formLogin.controls['username'].errors}">
+                  @if (formLogin.controls['username'].touched && formLogin.controls['username'].errors) {
+                    <div class="invalid-feedback">
+                      Le nom d'utilisateur est requis.
+                    </div>
+                  }
+                </div>
+              </div>
+              <div class="mb-4">
+                <label for="password" class="form-label visually-hidden">Password</label>
+                <div class="input-group">
+                  <span class="input-group-text">
+                    <i class="bi bi-lock"></i>
+                  </span>
+                  <input
+                    type="password"
+                    formControlName="password"
+                    id="password"
+                    class="form-control"
+                    placeholder="Entrez votre mot de passe"
+                    aria-label="Password"
+                    [ngClass]="{'is-invalid': formLogin.controls['password'].touched && formLogin.controls['password'].errors}">
+                  @if (formLogin.controls['password'].touched && formLogin.controls['password'].errors) {
+                    <div class="invalid-feedback">
+                      Le mot de passe est requis.
+                    </div>
+                  }
+                </div>
+              </div>
+              <button
+                type="submit"
+                [disabled]="formLogin.invalid"
+                class="btn btn-primary btn-lg w-100"
+                aria-label="Login">
+                Se connecter
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

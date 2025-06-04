@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+.accounts-section {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e1bee7 20%);
+  animation: fadeIn 1s ease-in;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.8s ease-in;
+}
+
+.card-header {
+  background: linear-gradient(135deg, #6a1b9a 0%, #ab47bc 100%);
+  color: #ffffff;
+  border-radius: 15px 15px 0 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+.input-group-text {
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 8px 0 0 8px;
+  color: #6a1b9a;
+}
+
+.form-control {
+  border: 1px solid #e1bee7;
+  border-radius: 0 8px 8px 0;
+  padding: 0.8rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #6a1b9a;
+  box-shadow: 0 0 8px rgba(106, 27, 154, 0.3);
+  outline: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #6a1b9a 0%, #ab47bc 100%);
+  border: none;
+  border-radius: 25px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(106, 27, 154, 0.4);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%);
+  border: none;
+  border-radius: 25px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(46, 125, 50, 0.4);
+}
+
+.table {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table thead {
+  background: #f5f5f5;
+  color: #2c3e50;
+}
+
+.table th, .table td {
+  padding: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.table tbody tr {
+  transition: background-color 0.3s ease;
+}
+
+.table tbody tr:hover {
+  background-color: #e1bee7;
+}
+
+.text-success {
+  color: #2e7d32 !important;
+}
+
+.fw-medium {
+  color: #2c3e50;
+}
+
+.alert-danger {
+  background-color: #ffebee;
+  color: #c0392b;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.pagination .page-item .page-link {
+  color: #6a1b9a;
+  border-radius: 8px;
+  margin: 0 0.2rem;
+  transition: all 0.3s ease;
+}
+
+.pagination .page-item.active .page-link {
+  background: linear-gradient(135deg, #6a1b9a 0%, #ab47bc 100%);
+  color: #ffffff;
+  border: none;
+}
+
+.pagination .page-item .page-link:hover {
+  background-color: #e1bee7;
+  color: #2c3e50;
+  transform: translateY(-2px);
+}
+
+.form-check-input {
+  border-color: #6a1b9a;
+}
+
+.form-check-input:checked {
+  background-color: #6a1b9a;
+  border-color: #6a1b9a;
+}
+
+.form-check-label {
+  color: #2c3e50;
+  font-size: 0.95rem;
+}
+
+.form-label {
+  color: #2c3e50;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .card-body {
+    padding: 1.5rem;
+  }
+  .card-header {
+    font-size: 1.1rem;
+  }
+  .form-control, .btn-primary, .btn-success {
+    font-size: 0.9rem;
+    padding: 0.7rem;
+  }
+  .table th, .table td {
+    font-size: 0.85rem;
+  }
+}
