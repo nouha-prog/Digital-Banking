@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Customer } from '../model/customer.model';
@@ -23,12 +23,12 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule], // Ajout de CommonModule
   templateUrl: './customer-accounts.component.html',
   styleUrls: ['./customer-accounts.component.css']
->>>>>>> 5a4163c096d1ffc6b51c0bdc56f9367f35f69df4
+
 })
 export class CustomerAccountsComponent implements OnInit {
   customerId!: string;
   customer!: Customer;
-<<<<<<< HEAD
+
   accounts: Account[] = [];
   accountDetails: { [key: string]: AccountDetails } = {};
   errorMessage: string | null = null;
@@ -40,15 +40,15 @@ export class CustomerAccountsComponent implements OnInit {
     private router: Router,
     private accountService: AccountService
   ) {
-=======
+
   constructor(private route: ActivatedRoute, private router: Router) {
->>>>>>> 5a4163c096d1ffc6b51c0bdc56f9367f35f69df4
+
     this.customer = this.router.getCurrentNavigation()?.extras.state as Customer;
   }
 
   ngOnInit(): void {
     this.customerId = this.route.snapshot.params['id'];
-<<<<<<< HEAD
+
     this.loadAccounts();
   }
 
@@ -91,7 +91,6 @@ export class CustomerAccountsComponent implements OnInit {
 
   goBack(): void {
     this.router.navigateByUrl('/admin/customers');
-=======
->>>>>>> 5a4163c096d1ffc6b51c0bdc56f9367f35f69df4
+
   }
 }
