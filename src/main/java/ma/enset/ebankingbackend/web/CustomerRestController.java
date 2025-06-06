@@ -3,16 +3,16 @@ package ma.enset.ebankingbackend.web;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import ma.enset.ebankingbackend.dto.CustomerDTO;
-<<<<<<< HEAD
+
 import ma.enset.ebankingbackend.entities.Customer;
 import ma.enset.ebankingbackend.exceptions.CustomerNotFoundException;
 import ma.enset.ebankingbackend.services.BankAccountService;
 import org.springframework.security.access.prepost.PreAuthorize;
-=======
+
 import ma.enset.ebankingbackend.exceptions.CustomerNotFoundException;
 import ma.enset.ebankingbackend.services.BankAccountService;
 
->>>>>>> 5a4163c096d1ffc6b51c0bdc56f9367f35f69df4
+
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,7 +23,7 @@ import java.util.List;
 @CrossOrigin("*")
 public class CustomerRestController {
     private BankAccountService bankAccountService;
-<<<<<<< HEAD
+
 
     @GetMapping("/customers")
     @PreAuthorize("hasAuthority('SCOPE_USER')")
@@ -62,7 +62,7 @@ public class CustomerRestController {
         bankAccountService.deleteCustomer(customerId);
     }
 }
-=======
+
     @GetMapping("/customers")
 
     public List<CustomerDTO> getCustomers(){
@@ -100,4 +100,4 @@ public class CustomerRestController {
         return bankAccountService.searchCustomers("%" + keyword + "%");
     }
 }
->>>>>>> 5a4163c096d1ffc6b51c0bdc56f9367f35f69df4
+
