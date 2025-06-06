@@ -3,7 +3,7 @@ import { CustomersComponent } from './customers/customers.component';
 import { AccountsComponent } from './accounts/accounts.component';
 import { NewCustomerComponent } from './new-customer/new-customer.component';
 import { CustomerAccountsComponent } from './customer-accounts/customer-accounts.component';
-<<<<<<< HEAD
+
 import { LoginComponent } from './login/login.component';
 import { AdminTemplateComponent } from './admin-template/admin-template.component';
 import { authenticationGuard } from './guards/authentification.guard';
@@ -22,7 +22,7 @@ export const routes: Routes = [
       { path: "customer-accounts/:id", component: CustomerAccountsComponent },
       { path: "not-authorized", component: NotAuthorizedComponent },
     ]},
-=======
+
 
 export const routes: Routes = [
   { path: 'customers', component: CustomersComponent },
@@ -30,5 +30,5 @@ export const routes: Routes = [
   { path: 'new-customer', component: NewCustomerComponent },
   { path: 'customer-accounts/:id', component: CustomerAccountsComponent },
   { path: '', redirectTo: '/customers', pathMatch: 'full' } // Redirection par défaut
->>>>>>> 5a4163c096d1ffc6b51c0bdc56f9367f35f69df4
+
 ];
