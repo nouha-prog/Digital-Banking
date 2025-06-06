@@ -7,11 +7,10 @@ import ma.enset.ebankingbackend.dto.SavingBankAccountDTO;
 import ma.enset.ebankingbackend.entities.*;
 import ma.enset.ebankingbackend.enums.AccountStatus;
 import ma.enset.ebankingbackend.enums.OperationType;
-<<<<<<< HEAD
+
 import ma.enset.ebankingbackend.exceptions.BalanceNotSufficientException;
 import ma.enset.ebankingbackend.exceptions.BankAccountNotFoundException;
-=======
->>>>>>> 5a4163c096d1ffc6b51c0bdc56f9367f35f69df4
+
 import ma.enset.ebankingbackend.exceptions.CustomerNotFoundException;
 import ma.enset.ebankingbackend.repositories.AccountOperationRepository;
 import ma.enset.ebankingbackend.repositories.BankAccountRepository;
@@ -33,7 +32,7 @@ public class EBankingBackendApplication {
     public static void main(String[] args) {
         SpringApplication.run(EBankingBackendApplication.class, args);
     }
-<<<<<<< HEAD
+
 
     @Bean
     CommandLineRunner commandLineRunner(BankAccountService bankAccountService) {
@@ -49,7 +48,7 @@ public class EBankingBackendApplication {
                 try {
                     bankAccountService.saveCurrentBankAccount(Math.random() * 90000, 9000, customer.getId());
                     bankAccountService.saveSavingBankAccount(Math.random() * 90000, 5.5, customer.getId());
-=======
+
     @Bean
     CommandLineRunner commandLineRunner(BankAccountService bankAccountService){
         return args -> {
@@ -64,13 +63,13 @@ public class EBankingBackendApplication {
                     bankAccountService.saveCurrentBankAccount(Math.random()*90000,9000,customer.getId());
                     bankAccountService.saveSavingBankAccount(Math.random()*120000,5.5,customer.getId());
 
->>>>>>> 5a4163c096d1ffc6b51c0bdc56f9367f35f69df4
+
                 } catch (CustomerNotFoundException e) {
                     e.printStackTrace();
                 }
             });
             List<BankAccountDTO> bankAccounts = bankAccountService.bankAccountList();
-<<<<<<< HEAD
+
             for (BankAccountDTO bankAccount : bankAccounts) {
                 for (int i = 0; i < 10; i++) {
                     String accountId;
@@ -81,7 +80,7 @@ public class EBankingBackendApplication {
                     }
                     bankAccountService.credit(accountId, 10000 + Math.random() * 120000, "Credit");
                     bankAccountService.debit(accountId, 1000 + Math.random() * 9000, "Debit");
-=======
+
             for (BankAccountDTO bankAccount:bankAccounts){
                 for (int i = 0; i <10 ; i++) {
                     String accountId;
@@ -92,12 +91,12 @@ public class EBankingBackendApplication {
                     }
                     bankAccountService.credit(accountId,10000+Math.random()*120000,"Credit");
                     bankAccountService.debit(accountId,1000+Math.random()*9000,"Debit");
->>>>>>> 5a4163c096d1ffc6b51c0bdc56f9367f35f69df4
+
                 }
             }
         };
     }
-<<<<<<< HEAD
+
 
     //@Bean
     CommandLineRunner start(CustomerRepository customerRepository,
@@ -144,7 +143,7 @@ public class EBankingBackendApplication {
         };
     }
 }
-=======
+
     //@Bean
     CommandLineRunner start(CustomerRepository customerRepository,
                             BankAccountRepository bankAccountRepository,
@@ -192,4 +191,4 @@ public class EBankingBackendApplication {
     }
 
 }
->>>>>>> 5a4163c096d1ffc6b51c0bdc56f9367f35f69df4
+
