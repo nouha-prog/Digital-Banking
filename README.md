@@ -18,11 +18,6 @@ Technologies :
 - JWT
 - Springdoc OpenAPI
 
-Liens utiles :
-
-Création Backend - Partie 1
-
-Création Backend - Partie 2
 
 ## 📌 Entités JPA :
 Customer : représente un client.
@@ -76,7 +71,7 @@ Technologies :
 
 Lien : Frontend Angular - YouTube
 
-# 🧰 Fonctionnalités general  :
+# 🧰 Fonctionnalités Générales :
 - Gestion complète des clients
 
 - Administration des comptes bancaires
