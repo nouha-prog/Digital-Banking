@@ -1,0 +1,83 @@
+<div class="container-fluid my-5 px-4 new-customer-section">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+      <div class="card border-0 shadow-sm">
+        <div class="card-header py-3">
+          <h5 class="mb-0">New Customer</h5>
+        </div>
+        <div class="card-body p-4">
+          @if (newCustomerFormGroup) {
+            <form [formGroup]="newCustomerFormGroup" (ngSubmit)="handleSaveCustomer()">
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <div class="input-group">
+                  <span class="input-group-text">
+                    <i class="bi bi-person"></i>
+                  </span>
+                  <input
+                    type="text"
+                    formControlName="name"
+                    id="name"
+                    class="form-control"
+                    placeholder="Enter customer name"
+                    aria-label="Customer name"
+                    [ngClass]="{'is-invalid': newCustomerFormGroup.controls['name'].touched && newCustomerFormGroup.controls['name'].errors}">
+                  @if (newCustomerFormGroup.controls['name'].touched && newCustomerFormGroup.controls['name'].errors) {
+                    <div class="invalid-feedback">
+                      @if (newCustomerFormGroup.controls['name'].errors!['required']) {
+                        Name is required.
+                      } @else if (newCustomerFormGroup.controls['name'].errors!['minlength']) {
+                        Name must be at least 3 characters.
+                      }
+                    </div>
+                  }
+                </div>
+              </div>
+              <div class="mb-4">
+                <label for="email" class="form-label">Email</label>
+                <div class="input-group">
+                  <span class="input-group-text">
+                    <i class="bi bi-envelope"></i>
+                  </span>
+                  <input
+                    type="email"
+                    formControlName="email"
+                    id="email"
+                    class="form-control"
+                    placeholder="Enter customer email"
+                    aria-label="Customer email"
+                    [ngClass]="{'is-invalid': newCustomerFormGroup.controls['email'].touched && newCustomerFormGroup.controls['email'].errors}">
+                  @if (newCustomerFormGroup.controls['email'].touched && newCustomerFormGroup.controls['email'].errors) {
+                    <div class="invalid-feedback">
+                      @if (newCustomerFormGroup.controls['email'].errors!['required']) {
+                        Email is required.
+                      } @else if (newCustomerFormGroup.controls['email'].errors!['email']) {
+                        Please enter a valid email address.
+                      }
+                    </div>
+                  }
+                </div>
+              </div>
+              <div class="d-flex gap-2">
+                <button
+                  type="submit"
+                  [disabled]="!newCustomerFormGroup.valid"
+                  class="btn btn-primary"
+                  aria-label="Save customer">
+                  Save
+                </button>
+                <button
+                  type="button"
+                  (click)="handleCancel()"
+                  class="btn btn-outline-secondary"
+                  aria-label="Cancel">
+                  Cancel
+                </button>
+              </div>
+            </form>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

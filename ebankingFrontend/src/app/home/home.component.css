@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+.hero-section {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #6a1b9a 0%, #ab47bc 100%);
+  animation: fadeIn 1s ease-in;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 12px 24px rgba(106, 27, 154, 0.3), 0 4px 8px rgba(0, 0, 0, 0.2);
+  min-height: 450px; /* Carte plus longue */
+  animation: popIn 0.8s ease-out;
+}
+
+.card-body {
+  padding: 4rem; /* Padding vertical accru pour allonger */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title-container {
+  position: relative;
+  height: 80px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.animated-title {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  font-weight: 600;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  transition: all 0.6s ease;
+  opacity: 0; /* Opacité initiale à 0 pour éviter le surtexte */
+}
+
+.animated-title:nth-child(1) {
+  opacity: 1; /* Premier titre visible au démarrage */
+  animation: titleSwap 10s infinite;
+}
+
+.animated-title:nth-child(2) {
+  animation: titleSwap 10s infinite 5s;
+}
+
+@keyframes titleSwap {
+  0%, 25% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  30%, 45% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  50%, 75% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  80%, 100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lead {
+  color: #7f8c8d;
+  font-size: 1.2rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #6a1b9a 0%, #ab47bc 100%);
+  border: none;
+  border-radius: 25px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.05); /* Effet "pop" au survol */
+  box-shadow: 0 6px 15px rgba(106, 27, 154, 0.4);
+  animation: pulse 0.5s ease-in-out;
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    min-height: 400px; /* Hauteur réduite pour mobile */
+  }
+  .card-body {
+    padding: 2.5rem; /* Padding réduit pour mobile */
+  }
+  .animated-title {
+    font-size: 1.8rem;
+  }
+  .title-container {
+    height: 60px;
+  }
+  .lead {
+    font-size: 1rem;
+  }
+  .btn-primary {
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+  }
+}

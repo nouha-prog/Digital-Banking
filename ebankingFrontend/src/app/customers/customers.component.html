@@ -1,0 +1,90 @@
+<div class="container-fluid my-5 px-4 customers-section">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      @if (customers | async; as listCustomers) {
+        <div class="card border-0 shadow-sm">
+          <div class="card-header py-3">
+            <h5 class="mb-0">Customers</h5>
+          </div>
+          <div class="card-body p-4">
+            @if (searchFormGroup) {
+              <form [formGroup]="searchFormGroup" (ngSubmit)="handleSearchCustomers()" class="mb-4">
+                <div class="input-group">
+                  <span class="input-group-text">
+                    <i class="bi bi-search"></i>
+                  </span>
+                  <input
+                    type="text"
+                    formControlName="keyword"
+                    class="form-control"
+                    placeholder="Search by name or email"
+                    aria-label="Search customers">
+                  <button class="btn btn-primary" type="submit">
+                    Search
+                  </button>
+                </div>
+              </form>
+            }
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered align-middle">
+                <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Email</th>
+                  @if (authService.roles.includes('ADMIN')) {
+                    <th scope="col">Actions</th>
+                  }
+                </tr>
+                </thead>
+                <tbody>
+                  @for (c of listCustomers; track c.id) {
+                    <tr>
+                      <td>{{ c.id }}</td>
+                      <td>{{ c.name }}</td>
+                      <td>{{ c.email }}</td>
+                      @if (authService.roles.includes('ADMIN')) {
+                        <td>
+                          <button
+                            (click)="handleDeleteCustomer(c)"
+                            class="btn btn-danger btn-sm me-1"
+                            aria-label="Delete customer">
+                            <i class="bi bi-trash"></i>
+                          </button>
+                          <button
+                            (click)="handleCustomerAccounts(c)"
+                            class="btn btn-success btn-sm"
+                            aria-label="View accounts">
+                            Accounts
+                          </button>
+                        </td>
+                      }
+                    </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      } @else {
+        @if (errorMessage) {
+          <div class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+              <div class="alert alert-danger mb-0" role="alert">
+                {{ errorMessage }}
+              </div>
+            </div>
+          </div>
+        } @else {
+          <div class="card border-0 shadow-sm">
+            <div class="card-body p-4 text-center">
+              <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          </div>
+        }
+      }
+    </div>
+  </div>
+</div>
