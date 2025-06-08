@@ -2,7 +2,8 @@
 # Digital Banking
 1. Présentation
 🏦 E-Banking App — Gestion des comptes bancaires
-📌 Présentation Générale
+
+## 📌 Présentation Générale
 Ce projet est une application de gestion bancaire développée avec Spring Boot pour le backend et Angular pour le frontend. Il permet de gérer des clients, leurs comptes bancaires (courants & épargnes), ainsi que les opérations bancaires (crédits et débits). L'application est également sécurisée via Spring Security et JWT.
 
 
